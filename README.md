@@ -7,7 +7,7 @@ working together
 Steven Lestrade, Chris Hanson, Anissa Arecena, Matt Morrow
 
 ## License
-
+test
 N/A
 
 ## Features
@@ -16,4 +16,4 @@ N/A
 ## Link to Live Application
 
 
-## Screenshots
+## Screenshot
