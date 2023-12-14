@@ -44,6 +44,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add logic to make a reservation using the selected options
     console.log('Reservation Details:', { date, time, partySize, seatingPreference });
   });
+
+  // Add an event listener to handle date selection
+    dateInput.addEventListener('change', (event) => {
+  // You can access the selected date with event.target.value
+    console.log('Selected date:', event.target.value);
+});
   // Event listener for search input
   searchInput.addEventListener('input', async function () {
     const query = searchInput.value.trim();
@@ -56,8 +62,3 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// Add an event listener to handle date selection
-dateInput.addEventListener('change', (event) => {
-  // You can access the selected date with event.target.value
-  console.log('Selected date:', event.target.value);
-});
