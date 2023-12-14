@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const apiKey = 'YOUR_YELP_API_KEY';
+  const apiKey = '5iaotR2Z5ma2uclxvjEcoBf7CcXEmYfGeqeRZzvx-R2uN5EwxK2eLan3ajB06HHXstfqErs_LnseKrVNKwjTDazE6Sd_KTwR3d569SbpW5sEnnprcPaQR3V1kmp6ZXYx';
   const searchInput = document.getElementById('restaurant_search');
   const restaurantList = document.querySelector('.restaurant-list ul');
   const reservationForm = document.querySelector('.reservation-form form');
+  const dateInput = document.getElementById('reservation-date');
+
   // Function to fetch restaurant data from Yelp API
   async function searchRestaurants(query) {
     try {
@@ -52,4 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
       restaurantList.innerHTML = ''; // Clear the list if the query is too short
     }
   });
+});
+
+// Add an event listener to handle date selection
+dateInput.addEventListener('change', (event) => {
+  // You can access the selected date with event.target.value
+  console.log('Selected date:', event.target.value);
 });
