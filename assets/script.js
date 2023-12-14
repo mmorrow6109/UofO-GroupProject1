@@ -1,50 +1,55 @@
-// DOM elements
-const restaurantInput = document.getElementById('Restaurant');
-const nameInput = document.getElementById('Name');
-const phoneInput = document.getElementById('phone');
-const sectionSelect = document.getElementById('section');
-const guestSelect = document.getElementById('guest');
-const reservationButton = document.querySelector('.nav button');
-
-// Reservation object
-let reservation = {
-  restaurant: "",
-  name: "",
-  phone: "",
-  section: "",
-  guests: 0
-};
-
-// Event listeners
-restaurantInput.addEventListener('input', (event) => {
-  reservation.restaurant = event.target.value;
-});
-
-nameInput.addEventListener('input', (event) => {
-  reservation.name = event.target.value;
-});
-
-phoneInput.addEventListener('input', (event) => {
-  reservation.phone = event.target.value;
-});
-
-sectionSelect.addEventListener('change', (event) => {
-  reservation.section = event.target.value;
-});
-
-guestSelect.addEventListener('change', (event) => {
-  reservation.guests = parseInt(event.target.value);
-});
-
-reservationButton.addEventListener('click', () => {
-  // Validate reservation
-  if (!reservation.restaurant || !reservation.name || !reservation.phone) {
-    alert('Please fill in all required fields.');
-    return;
+document.addEventListener('DOMContentLoaded', function () {
+  const apiKey = 'YOUR_YELP_API_KEY';
+  const searchInput = document.getElementById('restaurant_search');
+  const restaurantList = document.querySelector('.restaurant-list ul');
+  const reservationForm = document.querySelector('.reservation-form form');
+  // Function to fetch restaurant data from Yelp API
+  async function searchRestaurants(query) {
+    try {
+      const response = await fetch(`https://api.yelp.com/v3/businesses/search?term=${query}&location=city&limit=5`, {
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+        },
+      });
+      const data = await response.json();
+      return data.businesses;
+    } catch (error) {
+      console.error('Error fetching data from Yelp API', error);
+      return [];
+    }
   }
-
-  // Submit reservation
-  console.log('Submitting reservation:', reservation);
-  // TODO: Replace console.log with actual submission logic
-  // (e.g., API call, database update, etc.)
+  // Function to display restaurants in the UI
+  function displayRestaurants(restaurants) {
+    restaurantList.innerHTML = ''; // Clear previous results
+    if (restaurants.length === 0) {
+      restaurantList.innerHTML = '<p>No restaurants found</p>';
+      return;
+    }
+    restaurants.forEach((restaurant) => {
+      const li = document.createElement('li');
+      li.textContent = restaurant.name;
+      restaurantList.appendChild(li);
+    });
+  }
+  // Function to handle form submission
+  reservationForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    // Add your reservation logic here
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const partySize = document.getElementById('party-size').value;
+    const seatingPreference = document.getElementById('seating-preference').value;
+    // Add logic to make a reservation using the selected options
+    console.log('Reservation Details:', { date, time, partySize, seatingPreference });
+  });
+  // Event listener for search input
+  searchInput.addEventListener('input', async function () {
+    const query = searchInput.value.trim();
+    if (query.length > 2) {
+      const restaurants = await searchRestaurants(query);
+      displayRestaurants(restaurants);
+    } else {
+      restaurantList.innerHTML = ''; // Clear the list if the query is too short
+    }
+  });
 });
