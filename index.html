@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/style.css">
   <title>Book n Dine</title>
 </head>
 <body>
@@ -13,24 +14,24 @@
       Book n Dine
     </h1>
     <div class="p-2">
-      <input type="text" placeholder="Search..." class="border-3 border-black p-1">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded p-1">
-        Button
+      <input id="search-in" type="text" placeholder="Where are we eating?" class="border-3 border-black p-1">
+      <button id='search-btn' class="bg-green-500 hover:bg-green-700 text-white font-bold rounded p-1">
+        Search
       </button>
     </div>
   </div>
 
-  <div class="columns-5 p-4">
+  <form id="form" class="columns-3 p-4">
     <div>
-      <label for="Restaurant" class="block text-sm font-medium text-gray-900">Restaurant</label>
+      <label for="restaurant" class="block text-sm font-medium text-gray-900">Restaurant</label>
       <div class="mt-2">
-        <input type="text" name="Restaurant" id="Restaurant" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 sm:text-sm">
+        <input type="text" name="restaurant" id="restaurant" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 sm:text-sm">
       </div>
     </div>
     <div>
-      <label for="name" class="block text-sm font-medium text-gray-900">Name</label>
+      <label for="name" autocomplete="on" class="block text-sm font-medium text-gray-900">Name</label>
       <div class="mt-2">
-        <input type="text" name="name" id="Name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 sm:text-sm">
+        <input type="text" name="name" id="name" autocomplete="on" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 sm:text-sm">
       </div>
     </div>
     <div>
@@ -39,62 +40,114 @@
         <input type="text" name="phone" id="phone" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 sm:text-sm">
       </div>
     </div>
+  </form>
+  <form class="columns-3 p-4">
     <div class="p-1">
-      <label for="Section" class="block text-sm font-medium text-gray-900">Section</label>
+      <label for="section" class="block text-sm font-medium text-gray-900">Section</label>
       <select name="section" id="section" class="block text-sm font-medium p-1">
         <option value="indoor">Indoor</option>
         <option value="outdoor">Outdoor</option>
-        <option value="booth">Booth</option>
       </select>
     </div>
     <div class="p-1">
-      <label for="Section" class="block text-sm font-medium text-gray-900"># of guest</label>
-      <select name="section" id="section" class="block text-sm font-medium p-1">
-        <option value="one">One</option>
-        <option value="two">Two</option>
-        <option value="three">Three</option>
-        <option value="four">Four</option>
+      <label for="guests" class="block text-sm font-medium text-gray-900"># of guest</label>
+      <select name="guests" id="guests" class="block text-sm font-medium p-1">
+        <option value="one">1</option>
+        <option value="two">2</option>
+        <option value="three">3</option>
+        <option value="four">4</option>
+        <option value="five">5</option>
+        <option value="six">6</option>
       </select>
     </div>
-  </div>
-  <div>
-    <p class="text-center">calender here?</p>
+    <div>
+      <label for="time" class="block text-sm font-medium text-gray-900">Time</label>
+      <select name="time" id="time" class="block text-sm font-medium p-1">
+        <option value="one">11:00am</option>
+        <option value="two">11:30am</option>
+        <option value="three">12:00pm</option>
+        <option value="four">12:30pm</option>
+        <option value="five">1:00pm</option>
+        <option value="six">1:30pm</option>
+        <option value="seven">2:00pm</option>
+        <option value="eight">2:30pm</option>
+        <option value="nine">3:00pm</option>
+        <option value="ten">3:30pm</option>
+        <option value="eleven">4:00pm</option>
+        <option value="twelve">4:30pm</option>
+        <option value="thirteen">5:00pm</option>
+        <option value="fourteen">5:30pm</option>
+        <option value="fifteen">6:00pm</option>
+        <option value="sixteen">6:30pm</option>
+        <option value="seventeen">7:00pm</option>
+        <option value="eighteen">7:30pm</option>
+        <option value="nineteen">8:00pm</option>
+        <option value="twenty">8:30pm</option>
+        <option value="twenty-one">9:00pm</option>
+        <option value="twenty-two">9:30pm</option>
+        <option value="twenty-three">10:00pm</option>
+        <option value="twenty-four">10:30pm</option>
+        <option value="twenty-five">11:00pm</option>
+        <option value="twenty-six">11:30pm</option>
+        <option value="twenty-seven">12:00am</option>
+      </select>
+    </div>
+  </form>
+  <from class="p-4 flex justify-center flex-col">
+    <label class="self-center" id="reservation-date" for="reservation-date">Reservation Date:
+      <div>
+        <input id ="date" type="date">
+      </div>
+    </label>
+    <button id="submit-btn" type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold rounded p-2 w-48 self-center">
+    Submit Reservation
+    </button>
+  </form>
+</body>
+
+
+  <div id='results' class="cards columns-4 pt-10 ml-10">
+    <div id="result1" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result2" class="p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result3" class="p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result4" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="cards columns-4 pt-10 ml-10">
-    <div class="cards p-4">
-      <div class="max-w-xs rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="" alt="random picture">
-        <div class="px-3 py-4">
-          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
-        </div>
-      </div>
-    </div>
-    <div class="p-4">
-      <div class="max-w-xs rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="" alt="random picture">
-        <div class="px-3 py-4">
-          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
-        </div>
-      </div>
-    </div>
-    <div class="p-4">
-      <div class="max-w-xs rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="" alt="random picture">
-        <div class="px-3 py-4">
-          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
-        </div>
-      </div>
-    </div>
-    <div class="cards p-4">
-      <div class="max-w-xs rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="" alt="random picture">
-        <div class="px-3 py-4">
-          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
-        </div>
-      </div>
+  <div id="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+    <div style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%;">
+      <span id="close" style="color: #aaa; float: right; font-size: 28px; font-weight: bold;">&times;</span>
+      <p id="modal-content"></p>
     </div>
   </div>
 
+<script src="assets/script.js"></script>
 </body>
 </html>
