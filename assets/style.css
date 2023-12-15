@@ -6,6 +6,15 @@ body {
     text-align: center;
     color: #0fc96c;
   }
+ 
+     div {
+    color: #0fc96c;
+  }
+  .p-1 {
+color: #0fc96c;
+  }
+  
+  
   form {
     margin: 0 auto;
     width: 400px;
