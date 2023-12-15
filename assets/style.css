@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c02525;
+  }
+  h1 {
+    text-align: center;
+    color: #0fc96c;
+  }
+  form {
+    margin: 0 auto;
+    width: 400px;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #c82626;
+  }
+  input[type="text"], select {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+  }
+  select {
+    height: 30px;
+    color: #0fc96c;
+  }
+  input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #c02525;
+    color: #c82626;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  table {
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px 10px;
+    border: 1px solid #c41e1e;
+  }
+
+  
