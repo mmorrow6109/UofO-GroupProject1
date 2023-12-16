@@ -7,10 +7,15 @@ const submitBtn = document.getElementById('submit-btn');
 const translateApiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
 const translateApiKey = '3f877754a2mshf4074c4dd98fe98p1bbe81jsn7911bc7ba389';
 
+//function to fetch data from yelp api
 searchBtn.addEventListener('click', function (event) {
     event.preventDefault();
 
     const query = searchInput.value;
+
+    let searches = JSON.parse(localStorage.getItem('searches')) || [];
+    searches.push(query);
+    localStorage.setItem('searches', JSON.stringify(searches));
 
     let apiUrl = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=portland&price=1,2,3,4&term=${query}&limit=20`;
 
@@ -74,12 +79,14 @@ searchBtn.addEventListener('click', function (event) {
                     createButtons(resultEl, business);
                 }
             }
+            console.log(data);
         })
         .catch(error => {
             console.error('Error:', error);
         });
 });
 
+//function to creat buttons out of the data fetched from yelp api
 function createButtons(element, business) {
     element.onclick = function () {
         // Show the modal
@@ -95,6 +102,14 @@ function createButtons(element, business) {
         const nameItem = document.createElement('li');
         nameItem.textContent = `Name: ${business.name}`;
         bizList.appendChild(nameItem);
+
+        const addressItem = document.createElement('li');
+        addressItem.textContent = `Address: ${business.location.display_address}`;
+        bizList.appendChild(addressItem);
+
+        const categoryItem = document.createElement('li');
+        categoryItem.textContent = `Category: ${business.categories[0].title}`;
+        bizList.appendChild(categoryItem);
 
         const priceItem = document.createElement('li');
         priceItem.textContent = `Price: ${business.price}`;
@@ -116,7 +131,7 @@ function createButtons(element, business) {
     };
 }
 
-// Add an event listener to the submit button
+// function to submit information on the form
 submitBtn.addEventListener('click', function (event) {
 event.preventDefault();
 // Add your reservation logic here
@@ -161,12 +176,13 @@ window.onclick = function(event) {
 };
 });
 
-// Add an event listener to handle date selection
+// this is the date picker
 dateInput.addEventListener('change', (event) => {
 // You can access the selected date with event.target.value
 console.log('Selected date:', event.target.value);
 });
 
+// allows user to close the modal
 const closeButton = document.getElementById('close');
 closeButton.onclick = function() {
 modal.style.display = 'none';
