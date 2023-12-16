@@ -5,25 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-
   <link rel="stylesheet" href="assets/style.css">
-  <title>Book and Dine</title>
+  <title>Book n Dine</title>
 </head>
 <body>
   <div class="nav flex justify-between p-2 ">
     <h1 class="text-4xl">
-      Book and Dine
+      Book n Dine
     </h1>
     <div class="p-2">
       <input id="search-in" type="text" placeholder="Where are we eating?" class="border-3 border-black p-1">
-      <button id='search-btn' class="bg-green-500 hover:bg-green-700 text-white font-bold rounded p-1">
+      <button id='search-btn' class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded p-1">
         Search
       </button>
     </div>
   </div>
 
-
-  <form id="form" class="columns-3 p-4">
+  <form id="form" class="columns-5 p-4"></form>
     <div>
       <label for="restaurant" class="block text-sm font-medium text-gray-900">Restaurant</label>
       <div class="mt-2">
@@ -42,8 +40,6 @@
         <input type="text" name="phone" id="phone" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 sm:text-sm">
       </div>
     </div>
-  </form>
-  <form class="columns-3 p-4">
     <div class="p-1">
       <label for="section" class="block text-sm font-medium text-gray-900">Section</label>
       <select name="section" id="section" class="block text-sm font-medium p-1">
@@ -54,62 +50,56 @@
     <div class="p-1">
       <label for="guests" class="block text-sm font-medium text-gray-900"># of guest</label>
       <select name="guests" id="guests" class="block text-sm font-medium p-1">
-        <option value="one">1</option>
-        <option value="two">2</option>
-        <option value="three">3</option>
-        <option value="four">4</option>
-        <option value="five">5</option>
-        <option value="six">6</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
       </select>
     </div>
     <div>
       <label for="time" class="block text-sm font-medium text-gray-900">Time</label>
       <select name="time" id="time" class="block text-sm font-medium p-1">
-        <option value="one">11:00am</option>
-        <option value="two">11:30am</option>
-        <option value="three">12:00pm</option>
-        <option value="four">12:30pm</option>
-        <option value="five">1:00pm</option>
-        <option value="six">1:30pm</option>
-        <option value="seven">2:00pm</option>
-        <option value="eight">2:30pm</option>
-        <option value="nine">3:00pm</option>
-        <option value="ten">3:30pm</option>
-        <option value="eleven">4:00pm</option>
-        <option value="twelve">4:30pm</option>
-        <option value="thirteen">5:00pm</option>
-        <option value="fourteen">5:30pm</option>
-        <option value="fifteen">6:00pm</option>
-        <option value="sixteen">6:30pm</option>
-        <option value="seventeen">7:00pm</option>
-        <option value="eighteen">7:30pm</option>
-        <option value="nineteen">8:00pm</option>
-        <option value="twenty">8:30pm</option>
-        <option value="twenty-one">9:00pm</option>
-        <option value="twenty-two">9:30pm</option>
-        <option value="twenty-three">10:00pm</option>
-        <option value="twenty-four">10:30pm</option>
-        <option value="twenty-five">11:00pm</option>
-        <option value="twenty-six">11:30pm</option>
-        <option value="twenty-seven">12:00am</option>
-
-      </select>
-    </div>
-  </form>
-  <from class="p-4 flex justify-center flex-col">
-    <label class="self-center" id="reservation-date" for="reservation-date">Reservation Date:
-      <div>
-        <input id ="date" type="date">
+        <option value="11:00am">11:00am</option>
+        <option value="11:30am">11:30am</option>
+        <option value="12:00pm">12:00pm</option>
+        <option value="12:30pm">12:30pm</option>
+        <option value="1:00pm">1:00pm</option>
+        <option value="1:30pm">1:30pm</option>
+        <option value="2:00pm">2:00pm</option>
+        <option value="2:30pm">2:30pm</option>
+        <option value="3:00pm">3:00pm</option>
+        <option value="3:30pm">3:30pm</option>
+        <option value="4:00pm">4:00pm</option>
+        <option value="4:30pm">4:30pm</option>
+        <option value="5:00pm">5:00pm</option>
+        <option value="5:30pm">5:30pm</option>
+        <option value="6:00pm">6:00pm</option>
+        <option value="6:30pm">6:30pm</option>
+        <option value="7:00pm">7:00pm</option>
+        <option value="7:30pm">7:30pm</option>
+        <option value="8:00pm">8:00pm</option>
+        <option value="8:30pm">8:30pm</option>
+        <option value="9:00pm">9:00pm</option>
+        <option value="9:30pm">9:30pm</option>
+        <option value="10:00pm">10:00pm</option>
+        <option value="10:30pm">10:30pm</option>
+        <option value="11:00pm">11:00pm</option>
+        <option value="1:30pm">11:30pm</option>
+        <option value="12:00am">12:00am</option>
       </div>
-    </label>
-    <button id="submit-btn" type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold rounded p-2 w-48 self-center">
+    </div>
+    <label id="reservation-date" for="reservation-date">Reservation Date:</label>
+    <div>
+      <input id ="date" type="date">
+    </div>
+    <button id="submit-btn" type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold rounded p-2">
     Submit Reservation
     </button>
   </form>
-</body>
 
-
-  <div id='results' class="cards columns-4 pt-10 ml-10">
+  <div id='result' class="hidden cards columns-4 pt-10 ml-10">
     <div id="result1" class="cards p-4">
       <div class="max-w-xs rounded overflow-hidden shadow-lg">
         <img class="w-full" src="" alt="random picture">
@@ -135,6 +125,134 @@
       </div>
     </div>
     <div id="result4" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result5" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result6" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result7" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result8" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result9" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result10" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result11" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result12" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result13" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result14" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result15" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result16" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result17" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result18" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result19" class="cards p-4">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="random picture">
+        <div class="px-3 py-4">
+          <p class="font-bold text-xl mb-2">Lorem ipsum dolor</p>
+        </div>
+      </div>
+    </div>
+    <div id="result20" class="cards p-4">
       <div class="max-w-xs rounded overflow-hidden shadow-lg">
         <img class="w-full" src="" alt="random picture">
         <div class="px-3 py-4">
