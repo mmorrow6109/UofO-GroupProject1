@@ -1,6 +1,8 @@
 ## Group Project 1 - Reservation App
 
 Outline https://docs.google.com/document/d/1qT0IS4FhQWLCwOwUkRdy6w5ovQQXJsIIXbKLssNaVqQ/edit?usp=sharing
+Wireframe https://excalidraw.com/#room=f9a8a36274d29ec12036,FVOlqpSiYRDn2ldNmJeyNg
+Presentation https://www.canva.com/design/DAF262682X0/w2uGzjHjO0vROfLudnZW-Q/edit
 
 ## Details
 
