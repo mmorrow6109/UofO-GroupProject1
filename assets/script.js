@@ -188,20 +188,46 @@ closeButton.onclick = function() {
 modal.style.display = 'none';
 };
 
-function translateText(text, targetLang) {
-  const url = `${translateApiUrl}&q=${encodeURIComponent(text)}&target=${targetLang}`;
-  
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      // Extract the translated text
-      const translatedText = data.translations[0].translatedText;
+// starting the translate api section
+let translateButton = document.getElementById('translate-btn');
 
-      // Use the translated text wherever needed
-      // (e.g., update UI elements, send translated data)
-      console.log(`Translated "${text}" to "${targetLang}": ${translatedText}`);
-    })
-    .catch(error => {
-      console.error('Error translating text:', error);
+translateButton.addEventListener('click', function() {
+    // Get all text nodes in the document
+    let textNodes = getTextNodesIn(document.body);
+
+    // Loop over each text node
+    textNodes.forEach(function(node) {
+        // Get the text from the node
+        let sourceText = node.nodeValue;
+
+        translate(sourceText, function(translatedText) {
+            node.nodeValue = translatedText;
+        });
+    });
+});
+
+//function to get all text nodes in the document
+function getTextNodesIn(node) {
+    let textNodes = [];
+    if (node.nodeType == Node.TEXT_NODE) {
+        textNodes.push(node);
+    } else {
+        let children = node.childNodes;
+        for (let i = 0; i < children.length; i++) {
+            textNodes = textNodes.concat(getTextNodesIn(children[i]));
+        }
+    }
+    return textNodes;
+}
+
+//function to translate text in document
+function translate(sourceText, callback){
+    let sourceLang = 'en';
+    let targetLang = 'es';
+  
+    let url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl="+ sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
+  
+    $.getJSON(url, function(data) {
+        callback(data[0][0][0]);
     });
 }

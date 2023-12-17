@@ -4,22 +4,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/style.css">
   <title>Book and Dine PDX</title>
 </head>
 <body>
-  <div class="nav flex justify-between p-2 ">
+  <header class="nav flex justify-between p-2 ">
     <h1 class="text-4xl">
       Book and Dine PDX
     </h1>
     <div class="p-2">
       <input id="search-in" type="text" placeholder="Where are we eating?" class="border-3 border-black p-1">
-      <button id='search-btn' class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded p-1">
+      <button id='search-btn' class="bg-green-500 hover:bg-green-700 text-white font-bold rounded p-1">
         Search
       </button>
     </div>
-  </div>
+    <div>
+      <button id='translate-btn' class="bg-green-500 hover:bg-green-700 text-white font-bold rounded p-1">
+        Traducir al Español
+      </button>
+    </div>
+  </header>
 
   <form id="form" class="columns-5 p-4"></form>
     <div>
