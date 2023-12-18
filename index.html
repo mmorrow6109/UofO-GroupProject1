@@ -12,24 +12,22 @@
   <title>Book and Dine PDX</title>
 </head>
 <body>
-  <header class="nav flex justify-between p-2 ">
+  <header class="nav flex justify-between p-3">
     <h1 class="text-4xl">
       Book and Dine PDX
     </h1>
-    <div class="p-2">
-      <input id="search-in" type="text" placeholder="Where are we eating?" class="border-3 border-black p-1">
-      <button id='search-btn' class="bg-green-500 hover:bg-green-700 text-white font-bold rounded p-1">
+    <div class="flex gap-2 h-9">
+      <input id="search-in" type="text" placeholder="Where are we eating?" class="border-3 border-black rounded">
+      <button id='search-btn' class="bg-green-500 hover:bg-green-700 text-white font-bold rounded rounded">
         Search
       </button>
-    </div>
-    <div>
-      <button id='translate-btn' class="bg-green-500 hover:bg-green-700 text-white font-bold rounded p-1">
+      <button id='translate-btn' class="bg-green-500 hover:bg-green-700 text-white font-bold rounded w-full">
         Traducir al Español
       </button>
     </div>
   </header>
 
-  <form id="form" class="columns-5 p-4"></form>
+  <form id="form" class="columns-3 p-4 w-full">
     <div>
       <label for="restaurant" class="block text-sm font-medium text-gray-900">Restaurant</label>
       <div class="mt-2">
@@ -42,12 +40,14 @@
         <input type="text" name="name" id="name" autocomplete="on" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 sm:text-sm">
       </div>
     </div>
-    <div>
+    <div class="p-1">
       <label for="phone" class="block text-sm font-medium text-gray-900">Phone</label>
       <div class="mt-2">
         <input type="text" name="phone" id="phone" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 sm:text-sm">
       </div>
     </div>
+  </form>
+  <form class="columns-3 p-4 w-full">
     <div class="p-1">
       <label for="section" class="block text-sm font-medium text-gray-900">Section</label>
       <select name="section" id="section" class="block text-sm font-medium p-1">
@@ -66,7 +66,7 @@
         <option value="6">6</option>
       </select>
     </div>
-    <div>
+    <div class="p-1">
       <label for="time" class="block text-sm font-medium text-gray-900">Time</label>
       <select name="time" id="time" class="block text-sm font-medium p-1">
         <option value="11:00am">11:00am</option>
@@ -96,13 +96,16 @@
         <option value="11:00pm">11:00pm</option>
         <option value="1:30pm">11:30pm</option>
         <option value="12:00am">12:00am</option>
+      </select>
+    </div>
+  </form>
+  <form class="p-4 flex justify-center flex-col">
+    <label class="self-center text-green-500" id="reservation-date" for="reservation-date">Reservation Date:
+      <div>
+        <input id ="date" type="date">
       </div>
-    </div>
-    <label id="reservation-date" for="reservation-date">Reservation Date:</label>
-    <div>
-      <input id ="date" type="date">
-    </div>
-    <button id="submit-btn" type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold rounded p-2">
+    </label>
+    <button id="submit-btn" type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold rounded p-2 w-48 self-center">
     Submit Reservation
     </button>
   </form>
