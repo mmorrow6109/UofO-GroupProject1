@@ -1,8 +1,10 @@
 ## Group Project 1 - Reservation App
-
-Outline https://docs.google.com/document/d/1qT0IS4FhQWLCwOwUkRdy6w5ovQQXJsIIXbKLssNaVqQ/edit?usp=sharing
-Wireframe https://excalidraw.com/#room=f9a8a36274d29ec12036,FVOlqpSiYRDn2ldNmJeyNg
-Presentation https://www.canva.com/design/DAF262682X0/w2uGzjHjO0vROfLudnZW-Q/edit
+### Outline
+https://docs.google.com/document/d/1qT0IS4FhQWLCwOwUkRdy6w5ovQQXJsIIXbKLssNaVqQ/edit?usp=sharing
+### Wireframe
+https://excalidraw.com/#room=f9a8a36274d29ec12036,FVOlqpSiYRDn2ldNmJeyNg
+### Presentation
+https://www.canva.com/design/DAF262682X0/w2uGzjHjO0vROfLudnZW-Q/edit
 
 ## Details
 
@@ -26,7 +28,13 @@ N/A
 - A blueprint for a Spanish translation feature
 
 ## Link to Live Application
-
 https://mmorrow6109.github.io/UofO-GroupProject1/
 
 ## Screenshots
+### Main Page
+![Screenshot 2023-12-18 160010](https://github.com/mmorrow6109/UofO-GroupProject1/assets/144497679/ada498d6-8dcd-42a1-81f0-3e0ec32d6412)
+### Reservation
+![Screenshot 2023-12-18 160024](https://github.com/mmorrow6109/UofO-GroupProject1/assets/144497679/38635f45-7ba9-420b-b088-62bb935a0c72)
+
+
+
